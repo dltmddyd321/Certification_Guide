@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cert">
-        <activity android:name=".HowToStudy"></activity>
+        <activity android:name=".StudyActivity"></activity>
+        <activity android:name=".HowToStudy" />
         <activity android:name=".ScheduleCerti" />
         <activity android:name=".WhereCerti" />
         <activity android:name=".WhatCerti" />

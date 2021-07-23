@@ -49,7 +49,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/inforBtn"
+            android:id="@+id/testInfo"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@color/white"
@@ -73,7 +73,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/schedule"
+            android:id="@+id/testSchedule"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@color/white"

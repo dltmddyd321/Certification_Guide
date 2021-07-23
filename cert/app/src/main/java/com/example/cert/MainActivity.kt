@@ -8,18 +8,29 @@ import android.widget.ImageButton
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    private val testScheduleButton: ImageButton by lazy {
+        findViewById(R.id.testSchedule)
+    }
+
+    private val testInfoButton: ImageButton by lazy {
+        findViewById(R.id.testInfo)
+    }
+
+    private val studyButton: ImageButton by lazy{
+        findViewById(R.id.study)
+    }
+
+    private val channelButton: ImageButton by lazy{
+        findViewById(R.id.youtube)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val dDayButton: Button = findViewById(R.id.dDaySetting)
         val dDayText = findViewById<TextView>(R.id.dDay)
-
-        val certiInfoBtn = findViewById<ImageButton>(R.id.inforBtn)
-        val scheduleBtn: ImageButton = findViewById(R.id.schedule)
-        val channelBtn: ImageButton = findViewById(R.id.youtube)
-        val studyBtn: ImageButton = findViewById(R.id.study)
 
         //  intent를 통해 넘어온 문자열을 difDate 변수에 담음
         val difDate = intent.getStringExtra("difDate")
@@ -32,15 +43,24 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        certiInfoBtn.setOnClickListener {
-            val intent = Intent(this,WhatCerti::class.java)
+        testScheduleButton.setOnClickListener {
+            val intent = Intent(this, TestSchedule::class.java)
             startActivity(intent)
         }
 
-        scheduleBtn.setOnClickListener {
-            val intent = Intent(this,ScheduleCerti::class.java)
+        testInfoButton.setOnClickListener {
+            val intent = Intent(this, TestInfo::class.java)
             startActivity(intent)
         }
 
+        channelButton.setOnClickListener {
+            val intent = Intent(this,HowToStudy::class.java)
+            startActivity(intent)
+        }
+
+        studyButton.setOnClickListener {
+            val intent = Intent(this, StudyActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

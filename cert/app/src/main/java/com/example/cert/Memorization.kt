@@ -32,7 +32,8 @@ class Memorization : AppCompatActivity() {
         )
         remoteConfig.fetchAndActivate().addOnCompleteListener {
             if(it.isSuccessful) {
-                val words = parseWordsJson(remoteConfig.getString("words"))
+                val words = parseWordsJson(remoteConfig.getString("words")).shuffled()
+                //랜덤으로 단어 출력
                 val isWordRevealed = remoteConfig.getBoolean("is_word_revealed")
 
                 displayWordsPager(words,isWordRevealed)
@@ -55,6 +56,7 @@ class Memorization : AppCompatActivity() {
                 exp = it.getString("explanation"),
                 word = it.getString("word")
             )
+
         }
     }
 

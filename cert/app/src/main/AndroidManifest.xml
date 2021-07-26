@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cert">
-        <activity android:name=".StudyActivity"></activity>
-        <activity android:name=".HowToStudy" />
-        <activity android:name=".ScheduleCerti" />
-        <activity android:name=".WhereCerti" />
-        <activity android:name=".WhatCerti" />
+        <activity android:name=".Memorization"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DdayActivity" />
+        <activity android:name=".DdayActivity"></activity>
+        <activity android:name=".TestSchedule"></activity>
+        <activity android:name=".TestInfo"></activity>
+        <activity android:name=".WhereUsing"></activity>
+        <activity android:name=".StudyActivity"></activity>
+        <activity android:name=".WordTest"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".WrittenTest"></activity>
+        <activity android:name=".HowToStudy"></activity>
     </application>
 
 </manifest>

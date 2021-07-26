@@ -49,7 +49,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/inforBtn"
+            android:id="@+id/testInfo"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@color/white"
@@ -63,7 +63,7 @@
             android:text=" 정보처리산업기사란?"
             android:textColor="#00fff0"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"></TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -73,7 +73,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/schedule"
+            android:id="@+id/testSchedule"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@color/white"
@@ -87,7 +87,7 @@
             android:text=" 시험 일정 및 정보"
             android:textColor="#00fff0"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"></TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -111,7 +111,7 @@
             android:text=" 공부법 및 강의"
             android:textColor="#00fff0"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"></TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -135,7 +135,7 @@
             android:text=" 단어 암기 및 기출풀기"
             android:textColor="#00fff0"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"></TextView>
     </LinearLayout>
 
     <TextView
@@ -143,7 +143,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/versionText"
+        android:text="Version: Android 6.0"
         android:textStyle="bold" />
 
 </LinearLayout>

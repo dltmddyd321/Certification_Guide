@@ -3,7 +3,7 @@ package com.example.cert
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_schedule_certi.*
+import kotlinx.android.synthetic.main.test_schedule.*
 
 class HowToStudy : AppCompatActivity() {
 

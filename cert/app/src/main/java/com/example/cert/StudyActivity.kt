@@ -1,10 +1,11 @@
 package com.example.cert
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import androidx.appcompat.app.AppCompatActivity
+import com.example.cert.R
 
 class StudyActivity : AppCompatActivity() {
 
@@ -26,56 +27,56 @@ class StudyActivity : AppCompatActivity() {
         findViewById(R.id.wordTest)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_study)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.study_filter)
 
-        writtenTest.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
+            writtenTest.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    wordStudy.isChecked = false
+                    wordTest.isChecked = false
+                }
+            }
+
+            wordStudy.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    writtenTest.isChecked = false
+                    wordTest.isChecked = false
+                }
+            }
+
+            wordTest.setOnCheckedChangeListener{ buttonView, isChecked ->
+                if (isChecked) {
+                    writtenTest.isChecked = false
+                    wordStudy.isChecked = false
+                }
+            }
+
+            selectButton.setOnClickListener {
+
+                if (writtenTest.isChecked) {
+                    val intent = Intent(this, WrittenTest::class.java)
+                    startActivity(intent)
+                }
+
+                if (wordStudy.isChecked) {
+                    val intent = Intent(this, Memorization::class.java)
+                    startActivity(intent)
+                }
+
+                if (wordTest.isChecked) {
+                    val intent = Intent(this, WordTest::class.java)
+                    startActivity(intent)
+                }
+
+            }
+
+            cancelButton.setOnClickListener {
+                writtenTest.isChecked = false
                 wordStudy.isChecked = false
                 wordTest.isChecked = false
             }
-        }
-
-        wordStudy.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                writtenTest.isChecked = false
-                wordTest.isChecked = false
-            }
-        }
-
-        wordTest.setOnCheckedChangeListener{ buttonView, isChecked ->
-            if (isChecked) {
-                writtenTest.isChecked = false
-                wordStudy.isChecked = false
-            }
-        }
-
-        selectButton.setOnClickListener {
-
-            if (writtenTest.isChecked) {
-//                val intent = Intent(this, WrittenTest::class.java)
-//                startActivity(intent)
-            }
-
-            if (wordStudy.isChecked) {
-//                val intent = Intent(this, WordStudy::class.java)
-//                startActivity(intent)
-            }
-
-            if (wordTest.isChecked) {
-//                val intent = Intent(this, WordTest::class.java)
-//                startActivity(intent)
-            }
 
         }
-
-        cancelButton.setOnClickListener {
-            writtenTest.isChecked = false
-            wordStudy.isChecked = false
-            wordTest.isChecked = false
-        }
-
-    }
 
 }

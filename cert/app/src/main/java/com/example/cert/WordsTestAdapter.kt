@@ -1,10 +1,13 @@
 package com.example.cert
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class WordsTestAdapter (
@@ -29,6 +32,7 @@ class WordsTestAdapter (
 
         private val gradingBtn: Button = itemView.findViewById(R.id.gradingBtn)
         private val submissionBtn: Button = itemView.findViewById(R.id.submissionBtn)
+        private val answerWordEdt: EditText = itemView.findViewById(R.id.wordAnswerEdt)
 
         fun bind(words: Words) {
             wordTestView.text = words.word
@@ -38,6 +42,28 @@ class WordsTestAdapter (
 
             submissionBtn.setOnClickListener {
                 wordTestView.visibility = View.VISIBLE
+                when {
+                    words.word.indexOf(answerWordEdt.text.toString()) > 2-> {
+                        AlertDialog.Builder(itemView.context)
+                            .setTitle("정답 확인")
+                            .setMessage("정답입니다!!\n 정답: ${words.word}")
+                            .setPositiveButton("확") { _, _ -> }
+                            .create()
+                            .show()
+                    }
+                    answerWordEdt.text.toString().equals("") -> {
+                        Toast.makeText(itemView.context,"정답을 입력해 주세요!!", Toast.LENGTH_LONG).show()
+                        wordTestView.visibility = View.GONE
+                    }
+                    else -> {
+                        AlertDialog.Builder(itemView.context)
+                            .setTitle("정답 확인")
+                            .setMessage("오답입니다!!\n 정답: ${words.word}")
+                            .setPositiveButton("확인") { _, _ -> }
+                            .create()
+                            .show()
+                    }
+                }
             }
 
             gradingBtn.setOnClickListener {

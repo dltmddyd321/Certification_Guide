@@ -1,11 +1,12 @@
 package com.example.cert
 
 data class Test (
-    val testExp: String,
-    val testImg: String,
-    val test_1: String,
-    val test_2: String,
-    val test_3: String,
-    val test_4: String
+    val img: String,
+    val solve: String,
+    val res1: String,
+    val res2: String,
+    val res3: String,
+    val res4: String,
+    val dap: String
 
 )

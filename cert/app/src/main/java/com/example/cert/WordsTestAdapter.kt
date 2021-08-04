@@ -43,17 +43,19 @@ class WordsTestAdapter (
             submissionBtn.setOnClickListener {
                 wordTestView.visibility = View.VISIBLE
                 when {
-                    words.word.indexOf(answerWordEdt.text.toString()) > 2-> {
-                        AlertDialog.Builder(itemView.context)
-                            .setTitle("정답 확인")
-                            .setMessage("정답입니다!!\n 정답: ${words.word}")
-                            .setPositiveButton("확") { _, _ -> }
-                            .create()
-                            .show()
-                    }
-                    answerWordEdt.text.toString().equals("") -> {
-                        Toast.makeText(itemView.context,"정답을 입력해 주세요!!", Toast.LENGTH_LONG).show()
-                        wordTestView.visibility = View.GONE
+                    words.word.indexOf(answerWordEdt.text.toString()) > -1 -> {
+                        when {
+                            answerWordEdt.text.toString().equals("") -> {
+                                Toast.makeText(itemView.context,"정답을 입력해 주세요!!", Toast.LENGTH_LONG).show()
+                                wordTestView.visibility = View.GONE
+                            }
+                            else -> AlertDialog.Builder(itemView.context)
+                                .setTitle("정답 확인")
+                                .setMessage("정답입니다!!\n 정답: ${words.word}")
+                                .setPositiveButton("확인") { _, _ -> }
+                                .create()
+                                .show()
+                        }
                     }
                     else -> {
                         AlertDialog.Builder(itemView.context)

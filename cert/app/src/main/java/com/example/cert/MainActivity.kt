@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val dDayButton: Button = findViewById(R.id.dDaySetting)
+        val dDayButton: ImageButton = findViewById(R.id.dDaySetting)
         val dDayText = findViewById<TextView>(R.id.dDay)
 
         //  intent를 통해 넘어온 문자열을 difDate 변수에 담음

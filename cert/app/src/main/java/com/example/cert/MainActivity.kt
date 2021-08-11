@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     private val channelButton: ImageButton by lazy{
         findViewById(R.id.youtube)
     }
+
+    private var endCnt = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +64,15 @@ class MainActivity : AppCompatActivity() {
         studyButton.setOnClickListener {
             val intent = Intent(this, StudyActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    override fun onBackPressed() {
+        endCnt ++
+        Toast.makeText(this, "'뒤로' 버튼을 한번 더 누르시면 앱이 종료됩니다.",Toast.LENGTH_SHORT).show()
+        if(endCnt == 2) {
+            finish()
+            return
         }
     }
 }

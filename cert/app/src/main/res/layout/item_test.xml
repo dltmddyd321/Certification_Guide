@@ -72,13 +72,16 @@
     </RadioGroup>
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/correctButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/main"
         android:text="정답확인"
-        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/btn_go"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
